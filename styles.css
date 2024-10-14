@@ -1,3 +1,7 @@
+*, *::after, *::before{
+    box-sizing:border-box
+
+}
 body {
     font-family: 'Source Sans Pro', sans-serif;
     color: #404040;
@@ -9,37 +13,59 @@ body {
    ================= */
 
 h1 {
-    font-weight: 400;
     font-size: 2.5rem;
-    text-shadow: 0px 2px black ;
+    font-weight: 400;
+    
 }
 
 h2 {
-font-size: 2.25rem;
-margin-top: 0.166em;
-margin-bottom: 0.167em;
+    font-size: 2.25rem;
+    margin: 0.167em 0;
 }
-
 
 p {
     font-size: 1.125rem;
     line-height: 1.35;
 }
 
-
 .beta-text { 
     font-weight: 900;
+    
+}
+
+h1,
+.top-text,
+.beta-text {
+    text-shadow: 1px 2px #a19a85;
 }
 
 .subheading {
     color: #575757;
-    font-weight: 900;
+    font-weight: 900;  
     margin-bottom: 0.5em;
 }
 
 .beta-text,
+.top-text,
 .subheading {
     text-transform: uppercase;
+}
+
+
+
+.top-text {
+    font-size: 0.875rem;
+    font-weight: 900;
+    padding-top: 0.25em;
+    border-top: 5px solid;
+    order: -1;
+    margin: 0 auto;
+}
+
+.fine-print {
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    color: #858585;
 }
 
 /* =================
@@ -47,68 +73,123 @@ p {
    ================= */
 
 .intro,
-.main-content{
-    display: flex;
-    flex-direction: column;
-    padding-left: 2em;
-    padding-right: 2em;
-}
-.intro { 
-    color: #fff;
-    background-color: #9480e4;   
-    min-height: 250px;
-    justify-content: center;
-    text-align: center;
-
-}
-
 .main-content {
-align-items: center;
-padding-top: 2.5em ;
+    display: flex;
+    flex-direction: column; 
+    padding-left: 2em;
+    padding-right: 2em;   
+}
+
+/* =================
+    Intro
+   ================= */
+
+.intro { 
+    justify-content: space-between;
+    min-height: 250px;
+    text-align: center;
+    color: #fff;
+    background: #e6a91b url("images/crochet2.jpg");
+    background-position: center center; 
+    background-size: cover; 
+    padding-bottom: 1.5em;
+}
+
+/* ====================
+    Main content
+   ==================== */
+   
+.main-content {
+    align-items: center;
+    padding-top: 2.5em;
+}
+
+.main-content p,
+form {
+max-width: 450px;
 }
 
 .img-main {
-width: 120px;
-border-radius: 50%;
+    width: 120px;
+    border-radius: 50%;
 }
-
 
 /* =================
     Form
    ================= */
    
+input,
+button {
+    font-family: inherit;
+    width: 100%; 
+    border-radius: 5px;   
+}
+
+input {
+    padding: 0.5em;
+    margin-bottom: 0.75em;
+    border: 2px solid #d1d5db;
+}
+
+input:focus {
+    outline: none;
+    border-color: #e6a91b;
+    background-color: #e6e8ec;
+}
+
+.btn {
+    text-transform: uppercase;
+    font-weight: 900;
+    letter-spacing: 1px;
+    padding: 1em 0;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary {
+    color: white;
+    background-color: #e6a91b;
+    margin-top: 1em;    
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: #eec460;
+}
 
 /* =================
     Media queries 
    ================= */
-   
 
 @media (min-width: 576px) {
-    body{
+    body {
         display: flex;
     }
+    
     h1 {
-        /* font-size: 3.25rem; */
         font-size: 5vw;
-        
     }
+    
     h2 {
         font-size: 2.625rem;
-
     }
-    .beta-text{
+    
+    .beta-text {
         font-size: 1.25rem;
     }
+    
     .intro,
-    .main-content{
+    .main-content {
         width: 50%;
     }
+    
     .intro {
         min-height: 100vh;
+        background-size: cover;
     }
-    .main-content{
+    
+    .main-content {
         justify-content: center;
-        padding-top:0 ;
+        padding-top: 0;
     }
-  
 }
